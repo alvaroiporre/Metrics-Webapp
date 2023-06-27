@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Map from './components/Map';
+import Home from './components/Home';
 
 function App() {
   return (
@@ -8,8 +9,8 @@ function App() {
       <BrowserRouter>
         <h1>Metrics Webapp</h1>
         <Routes>
-          <Route path="/" element={<Map />} />
-          <Route path="/details" element={<h2>Details</h2>} />
+          <Route path="/" element={<Home />} />
+          <Route path="/details" element={<h2><Map /></h2>} />
         </Routes>
       </BrowserRouter>
     </div>

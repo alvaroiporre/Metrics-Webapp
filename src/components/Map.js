@@ -74,7 +74,7 @@ const Map = () => {
     // Define the polygon vertices
     const data = shapes[index].geo_shape.geometry.coordinates;
     const limits = getLimits(data);
-    console.log('data',data);
+    console.log('data', data);
     if (data.length === 1) {
       const polygon = formData(data[0], limits);
       context.beginPath();

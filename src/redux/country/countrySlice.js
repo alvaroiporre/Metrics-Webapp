@@ -33,6 +33,7 @@ const countrySlice = createSlice({
       })
       .addCase(fetchCountries.fulfilled, (state, action) => {
         state.status = 'succeeded';
+        console.log('countries', action.payload);
         state.countries = action.payload.map((country) => ({
           name: country.name.official,
           id: country.cca2,
@@ -52,6 +53,6 @@ const countrySlice = createSlice({
   },
 });
 
-export const { selectMission, joinMission, leaveMission } = countrySlice.actions;
+export const { selectCountry, getCountriesRegion } = countrySlice.actions;
 
 export default countrySlice.reducer;
