@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import shapes from '../../assets/country_shapes.json';
 
 export const fetchCountries = createAsyncThunk('countries/fetchCountries', async () => {
   const response = await axios.get('https://restcountries.com/v3.1/all');
@@ -13,6 +14,7 @@ const countrySlice = createSlice({
     selectedCountry: null,
     regionSelected: null,
     countriesRegion: [],
+    countriesIndexes: {},
     status: 'idle',
     error: null,
   },
@@ -25,6 +27,13 @@ const countrySlice = createSlice({
       const newState = state.countries.filter((country) => country.region === region);
       state.countriesRegion = newState;
     },
+    getCountriesIndexes: (state) => {
+      const newIndex = {};
+      for (let i = 0; i < shapes.length; i += 1) {
+        newIndex[shapes[i].iso_a2] = i;
+      }
+      state.countriesIndexes = newIndex;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -33,7 +42,13 @@ const countrySlice = createSlice({
       })
       .addCase(fetchCountries.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        console.log('countries', action.payload);
+
+        const newIndex = {};
+        for (let i = 0; i < shapes.length; i += 1) {
+          newIndex[shapes[i].iso2] = i;
+        }
+
+        state.countriesIndexes = newIndex;
         state.countries = action.payload.map((country) => ({
           name: country.name.official,
           id: country.cca2,
