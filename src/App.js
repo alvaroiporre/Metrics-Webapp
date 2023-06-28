@@ -10,7 +10,7 @@ function App() {
         <h1>Metrics Webapp</h1>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/details" element={<h2><Map /></h2>} />
+          <Route path="/details/:countryId" element={<h2><Map /></h2>} />
         </Routes>
       </BrowserRouter>
     </div>
