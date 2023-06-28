@@ -2,17 +2,17 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import shapes from '../assets/country_shapes.json';
 import { getLimits, formData } from '../maps/maps';
+import { Link } from 'react-router-dom';
 
 const Map = () => {
-  const selectedCountry = useSelector((state) => state.countries.selectedCountry);
+  const selectedCountry = useSelector((state) => state.countries.selectedCountry) || 'BO';
+  const selectedCountryInfo = useSelector((state) => state.countries.selectedCountryInfo);
   const indexCountrySelected = useSelector((store) => store.countries.countriesIndexes);
   const index = 0 || indexCountrySelected[selectedCountry];
-
   const reference = useRef();
   const [dimensions, setDimensions] = useState({ width: 400, height: 400 });
 
   const canvasRef = useRef(null);
-  const countryName = shapes[index].cntry_name;
 
   useEffect(() => {
     if (reference.current) {
@@ -66,8 +66,21 @@ const Map = () => {
 
   return (
     <>
-      <h2>{countryName}</h2>
+      <Link to="/">Back</Link>
+      <h2>
+        {selectedCountryInfo.name}
+        {' '}
+        {selectedCountryInfo.flag}
+      </h2>
       <canvas ref={canvasRef} width={dimensions.width} height={dimensions.height} />
+      <p>
+        Capital:
+        {selectedCountryInfo.capital}
+      </p>
+      <p>
+        Population:
+        {selectedCountryInfo.population}
+      </p>
     </>
   );
 };

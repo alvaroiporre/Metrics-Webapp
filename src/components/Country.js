@@ -76,6 +76,17 @@ const Country = ({ id }) => {
 
 Country.propTypes = {
   id: PropTypes.string.isRequired,
+  // country: PropTypes.shape({
+  //   name: PropTypes.string.isRequired,
+  //   id: PropTypes.string.isRequired,
+  //   currency: PropTypes.string.isRequired,
+  //   capital: PropTypes.string.isRequired,
+  //   region: PropTypes.string.isRequired,
+  //   languages: PropTypes.string.isRequired,
+  //   area: PropTypes.number.isRequired,
+  //   flag: PropTypes.string.isRequired,
+  //   population: PropTypes.number.isRequired,
+  // }),
 };
 
 export default Country;

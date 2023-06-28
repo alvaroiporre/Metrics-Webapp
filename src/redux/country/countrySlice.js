@@ -12,6 +12,7 @@ const countrySlice = createSlice({
   initialState: {
     countries: [],
     selectedCountry: null,
+    selectedCountryInfo: null,
     regionSelected: null,
     countriesRegion: [],
     countriesIndexes: {},
@@ -21,6 +22,7 @@ const countrySlice = createSlice({
   reducers: {
     selectCountry: (state, action) => {
       state.selectedCountry = action.payload;
+      state.selectedCountryInfo = state.countries.find((country) => country.id === action.payload);
     },
     getCountriesRegion: (state, action) => {
       const region = action.payload;
