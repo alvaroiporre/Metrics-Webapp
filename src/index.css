@@ -1,57 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100&display=swap');
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
 }
 
 .navbar {
-    background: #4269b2;
-    padding: 10px;
-    text-align: center;
-    color: white;
+  background: #4269b2;
+  padding: 10px;
+  text-align: center;
+  color: white;
 }
+
 .header {
-    margin-bottom: 50px;
-    background: #4269b2;
+  margin-bottom: 50px;
+  background: #4269b2;
 }
 
 .button-slider {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #5788e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5788e5;
 }
 
 .continent-title {
-    position: absolute;
-    color: white;
+  position: absolute;
+  color: white;
 }
 
 .slider-image {
-    width: 100%;
-    margin: 20px 0;
-    
+  width: 100%;
+  margin: 20px 0;
 }
 
 .countries-container {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .country-card {
-    width: 50%;
+  width: 50%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
 }
 
 .country-card-name {
-    color: white;
-    text-decoration: none;
-    font-size: medium;
+  color: white;
+  text-decoration: none;
+  font-size: medium;
+  text-align: right;
+  align-self: flex-end;
+  justify-self: flex-end;
+  padding-right: 10px;
 }
 
-.color-0, .color-3 {
-    background-color: #4067ae;
+.country-card-area {
+  text-transform: lowercase;
+  color: white;
+  font-size: smaller;
+  text-align: right;
+  align-self: flex-end;
+  padding-right: 10px;
 }
 
-.color-1, .color-2 {
-    background-color: #3f62a5;
+.color-0,
+.color-3 {
+  background-color: #4067ae;
+}
+
+.color-1,
+.color-2 {
+  background-color: #3f62a5;
+}
+
+.navbar-map {
+  width: 100%;
+  background: #4269b2;
+  text-align: center;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.icon-back {
+  width: 20px;
+}
+
+.map-header {
+  height: 50%;
+  width: 100%;
+  background-color: #5588e4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row-info {
+  padding: 30px 15px;
+  color: white;
+}
+
+.country-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }

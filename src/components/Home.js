@@ -36,8 +36,8 @@ const Home = () => {
   return (
     <>
       <header className="header">
-        <nav>
-          <h1 className='navbar'>Countries of the World</h1>
+        <nav className="navbar">
+          <h1>Countries of the World</h1>
         </nav>
 
         <AwesomeSlider>
@@ -97,8 +97,13 @@ const Home = () => {
                   onClick={() => handleSelectedCountry(country.id)}
                   className={`country-card color-${index % 4}`}
                 >
-                  <h2 className="country-card-name">{country.name}</h2>
                   <Country id={country.id} />
+                  <h2 className="country-card-name">{country.name}</h2>
+                  <p className="country-card-area">
+                    {country.area}
+                    {' '}
+                    m2
+                  </p>
                 </Link>
               ))
             }

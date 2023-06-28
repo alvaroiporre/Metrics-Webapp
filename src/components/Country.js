@@ -12,7 +12,7 @@ const Country = ({ id }) => {
 
   const [dimensions, setDimensions] = useState({ width: 100, height: 100 });
 
-  const canvasRef = useRef();
+  const canvasRef = useRef(null);
   // const countryName = id;
 
   useEffect(() => {
@@ -23,7 +23,6 @@ const Country = ({ id }) => {
       });
     }
     const canvas = canvasRef.current;
-    console.log(reference.current, canvasRef.current);
     const context = canvas.getContext('2d');
     context.clearRect(0, 0, dimensions.height, dimensions.width);
 
@@ -70,7 +69,7 @@ const Country = ({ id }) => {
 
   return (
     <>
-      <canvas ref={canvasRef}/>
+      <canvas ref={canvasRef} width={100} height={100} />
     </>
   );
 };

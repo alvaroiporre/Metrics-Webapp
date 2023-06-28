@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import shapes from '../assets/country_shapes.json';
 import { getLimits, formData } from '../maps/maps';
+import iconBack from '../assets/img/icon_back.png';
 
 const Map = () => {
   const selectedCountry = useSelector((state) => state.countries.selectedCountry) || 'BO';
@@ -10,7 +11,7 @@ const Map = () => {
   const indexCountrySelected = useSelector((store) => store.countries.countriesIndexes);
   const index = 0 || indexCountrySelected[selectedCountry];
   const reference = useRef();
-  const [dimensions, setDimensions] = useState({ width: 400, height: 400 });
+  const [dimensions, setDimensions] = useState({ width: 300, height: 300 });
 
   const canvasRef = useRef(null);
 
@@ -66,21 +67,36 @@ const Map = () => {
 
   return (
     <>
-      <Link to="/">Back</Link>
-      <h2>
-        {selectedCountryInfo.name}
-        {' '}
-        {selectedCountryInfo.flag}
-      </h2>
-      <canvas ref={canvasRef} width={dimensions.width} height={dimensions.height} />
-      <p>
-        Capital:
-        {selectedCountryInfo.capital}
-      </p>
-      <p>
-        Population:
-        {selectedCountryInfo.population}
-      </p>
+      <nav className="navbar-map">
+        <Link to="/"><img className="icon-back" src={iconBack} alt="back" /></Link>
+        <h2>{selectedCountryInfo.name}</h2>
+        <h2>{selectedCountryInfo.flag}</h2>
+      </nav>
+      <div className='content'>
+      <div className="map-header">
+        <canvas ref={canvasRef} width={dimensions.width} height={dimensions.height} />
+      </div>
+      <div className="country-info">
+        <p className="row-info color-1">
+          <b>Oficial Name: </b>
+          {selectedCountryInfo.oname}
+        </p>
+        <p className="row-info color-0">
+          <b>Capital: </b>
+          {selectedCountryInfo.capital[0]}
+        </p>
+        <p className="row-info color-1">
+          <b>Population: </b>
+          {selectedCountryInfo.population}
+          {' hab.'}
+        </p>
+        <p className="row-info color-0">
+          <b>Area: </b>
+          {selectedCountryInfo.area}
+          {' m2'}
+        </p>
+      </div>
+      </div>
     </>
   );
 };
