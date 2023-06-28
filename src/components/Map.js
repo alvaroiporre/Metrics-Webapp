@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import shapes from '../assets/country_shapes.json';
 import { getLimits, formData } from '../maps/maps';
-import { Link } from 'react-router-dom';
 
 const Map = () => {
   const selectedCountry = useSelector((state) => state.countries.selectedCountry) || 'BO';
