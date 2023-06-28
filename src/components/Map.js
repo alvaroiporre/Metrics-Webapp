@@ -72,30 +72,30 @@ const Map = () => {
         <h2>{selectedCountryInfo.name}</h2>
         <h2>{selectedCountryInfo.flag}</h2>
       </nav>
-      <div className='content'>
-      <div className="map-header">
-        <canvas ref={canvasRef} width={dimensions.width} height={dimensions.height} />
-      </div>
-      <div className="country-info">
-        <p className="row-info color-1">
-          <b>Oficial Name: </b>
-          {selectedCountryInfo.oname}
-        </p>
-        <p className="row-info color-0">
-          <b>Capital: </b>
-          {selectedCountryInfo.capital[0]}
-        </p>
-        <p className="row-info color-1">
-          <b>Population: </b>
-          {selectedCountryInfo.population}
-          {' hab.'}
-        </p>
-        <p className="row-info color-0">
-          <b>Area: </b>
-          {selectedCountryInfo.area}
-          {' m2'}
-        </p>
-      </div>
+      <div className="content">
+        <div className="map-header">
+          <canvas ref={canvasRef} width={dimensions.width} height={dimensions.height} />
+        </div>
+        <div className="country-info">
+          <p className="row-info color-1">
+            <b>Oficial Name: </b>
+            {selectedCountryInfo.oname}
+          </p>
+          <p className="row-info color-0">
+            <b>Capital: </b>
+            {selectedCountryInfo.capital[0]}
+          </p>
+          <p className="row-info color-1">
+            <b>Population: </b>
+            {selectedCountryInfo.population}
+            {' hab.'}
+          </p>
+          <p className="row-info color-0">
+            <b>Area: </b>
+            {selectedCountryInfo.area}
+            {' m2'}
+          </p>
+        </div>
       </div>
     </>
   );

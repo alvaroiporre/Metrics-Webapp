@@ -124,3 +124,32 @@ body {
   flex-direction: column;
   align-items: stretch;
 }
+
+@media screen and (min-width: 750px) {
+  .content {
+    flex-direction: row;
+  }
+
+  .map-header {
+    height: auto;
+    width: 70%;
+  }
+
+  .country-info {
+    width: 30%;
+  }
+
+  .row-info {
+    padding: 70px 10px;
+  }
+
+  .country-card {
+    width: 33.33%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .country-card {
+    width: 25%;
+  }
+}
