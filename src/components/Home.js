@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
 import { fetchCountries, getCountriesRegion, selectCountry } from '../redux/country/countrySlice';
 import Country from './Country';
 import americas from '../assets/img/americas.svg';
@@ -13,7 +15,6 @@ const Home = () => {
   const dispatch = useDispatch();
   const countriesRegion = useSelector((state) => state.countries.countriesRegion);
   const status = useSelector((state) => state.countries.status);
-  const selectedCountry = useSelector((state) => state.countries.selectedCountry);
 
   const handleRegion = (region) => {
     dispatch(getCountriesRegion(region));
@@ -34,56 +35,74 @@ const Home = () => {
 
   return (
     <>
-      <span>{selectedCountry}</span>
-      <h2>Home</h2>
-      <button
-        type="submit"
-        onClick={() => handleRegion('Americas')}
-      >
-        <h2>america</h2>
-        <img src={americas} alt="america" />
-      </button>
-      <button
-        type="submit"
-        onClick={() => handleRegion('Africa')}
-      >
-        <h2>africa</h2>
-        <img src={africa} alt="africa" />
-      </button>
-      <button
-        type="submit"
-        onClick={() => handleRegion('Asia')}
-      >
-        <h2>asia</h2>
-        <img src={asia} alt="asia" />
-      </button>
-      <button
-        type="submit"
-        onClick={() => handleRegion('Europe')}
-      >
-        <h2>aeurope</h2>
-        <img src={europe} alt="europe" />
-      </button>
-      <button
-        type="submit"
-        onClick={() => handleRegion('Oceania')}
-      >
-        <h2>oceania</h2>
-        <img src={oceania} alt="oceania" />
-      </button>
+      <header className="header">
+        <nav>
+          <h1 className='navbar'>Countries of the World</h1>
+        </nav>
+
+        <AwesomeSlider>
+          <button
+            className="button-slider"
+            type="submit"
+            onTransitionEnd={() => handleRegion('Americas')}
+          >
+            <h2 className="continent-title">America</h2>
+            <img className="slider-image" src={americas} alt="america" />
+          </button>
+          <button
+            className="button-slider"
+            type="submit"
+            onTransitionEnd={() => handleRegion('Africa')}
+          >
+            <h2 className="continent-title">Africa</h2>
+            <img className="slider-image" src={africa} alt="africa" />
+          </button>
+          <button
+            className="button-slider"
+            type="submit"
+            onTransitionEnd={() => handleRegion('Asia')}
+          >
+            <h2 className="continent-title">Asia</h2>
+            <img className="slider-image" src={asia} alt="asia" />
+          </button>
+          <button
+            className="button-slider"
+            type="submit"
+            onTransitionEnd={() => handleRegion('Europe')}
+          >
+            <h2 className="continent-title">Europe</h2>
+            <img className="slider-image" src={europe} alt="europe" />
+          </button>
+          <button
+            className="button-slider"
+            type="submit"
+            onTransitionEnd={() => handleRegion('Oceania')}
+          >
+            <h2 className="continent-title">Oceania</h2>
+            <img className="slider-image" src={oceania} alt="oceania" />
+          </button>
+
+        </AwesomeSlider>
+      </header>
+
       {
         countriesRegion.length > 0
         && (
-        <ul>
-          {
-            countriesRegion.map((country) => (
-              <Link to={/details/ + country.id} key={country.id} onClick={() => handleSelectedCountry(country.id)}>
-                <h2>{country.name}</h2>
-                <Country id={country.id} />
-              </Link>
-            ))
-          }
-        </ul>
+          <ul className="countries-container">
+            {
+              countriesRegion.map((country, index) => (
+                <Link
+                  to={/details/ + country.id}
+                  key={country.id}
+                  onClick={() => handleSelectedCountry(country.id)}
+                  className={`country-card color-${index % 4}`}
+                >
+                  <h2 className="country-card-name">{country.name}</h2>
+                  <Country id={country.id} />
+                </Link>
+              ))
+            }
+          </ul>
         )
       }
     </>

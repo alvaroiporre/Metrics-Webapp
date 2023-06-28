@@ -39,8 +39,8 @@ const Map = () => {
 
       context.closePath();
 
-      context.fillStyle = 'rgba(255, 0, 0, 0.5)';
-      context.strokeStyle = 'black';
+      context.fillStyle = 'rgba(45, 69, 115, 0.8)';
+      context.strokeStyle = '#2d4572';
 
       context.fill();
       context.stroke();
@@ -55,8 +55,8 @@ const Map = () => {
 
         context.closePath();
 
-        context.fillStyle = 'rgba(255, 0, 0, 0.5)';
-        context.strokeStyle = 'black';
+        context.fillStyle = 'rgba(45, 69, 115, 0.8)';
+        context.strokeStyle = '#2d4572';
 
         context.fill();
         context.stroke();

@@ -7,7 +7,6 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <h1>Metrics Webapp</h1>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/details/:countryId" element={<h2><Map /></h2>} />

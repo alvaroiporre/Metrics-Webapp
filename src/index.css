@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background: #4269b2;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+.header {
+    margin-bottom: 50px;
+    background: #4269b2;
+}
+
+.button-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5788e5;
+}
+
+.continent-title {
+    position: absolute;
+    color: white;
+}
+
+.slider-image {
+    width: 100%;
+    margin: 20px 0;
+    
+}
+
+.countries-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.country-card {
+    width: 50%;
+}
+
+.country-card-name {
+    color: white;
+    text-decoration: none;
+    font-size: medium;
+}
+
+.color-0, .color-3 {
+    background-color: #4067ae;
+}
+
+.color-1, .color-2 {
+    background-color: #3f62a5;
+}
