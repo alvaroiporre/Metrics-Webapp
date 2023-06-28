@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import shapes from '../assets/country_shapes.json';
 import { getLimits, formData } from '../maps/maps';
 
@@ -12,7 +13,7 @@ const Country = ({ id }) => {
   const [dimensions, setDimensions] = useState({ width: 100, height: 100 });
 
   const canvasRef = useRef(null);
-  const countryName = id;
+  // const countryName = id;
 
   useEffect(() => {
     if (reference.current) {
@@ -64,13 +65,17 @@ const Country = ({ id }) => {
         context.stroke();
       });
     }
-  }, [index]);
+  }, [index, dimensions]);
 
   return (
     <>
       <canvas ref={canvasRef} width={100} height={100} />
     </>
   );
+};
+
+Country.propTypes = {
+  id: PropTypes.string.isRequired,
 };
 
 export default Country;

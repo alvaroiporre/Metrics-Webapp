@@ -36,31 +36,41 @@ const Home = () => {
     <>
       <span>{selectedCountry}</span>
       <h2>Home</h2>
-      <div onClick={() => handleRegion('Americas')}
-      onKeyDown={() => handleRegion('Americas'}>
+      <button
+        type="submit"
+        onClick={() => handleRegion('Americas')}
+      >
         <h2>america</h2>
         <img src={americas} alt="america" />
-      </div>
-      <div onClick={() => handleRegion('Africa')}
-      onKeyDown={() => handleRegion('Africa'}>
+      </button>
+      <button
+        type="submit"
+        onClick={() => handleRegion('Africa')}
+      >
         <h2>africa</h2>
         <img src={africa} alt="africa" />
-      </div>
-      <div onClick={() => handleRegion('Asia')}
-      onKeyDown={() => handleRegion('Asia'}>
+      </button>
+      <button
+        type="submit"
+        onClick={() => handleRegion('Asia')}
+      >
         <h2>asia</h2>
         <img src={asia} alt="asia" />
-      </div>
-      <div onClick={() => handleRegion('Europe')}
-        onKeyDown={() => handleRegion('Europe'}>
+      </button>
+      <button
+        type="submit"
+        onClick={() => handleRegion('Europe')}
+      >
         <h2>aeurope</h2>
         <img src={europe} alt="europe" />
-      </div>
-      <div onClick={() => handleRegion('Oceania')}
-          onKeyDown={() => handleRegion('Oceania')}>
+      </button>
+      <button
+        type="submit"
+        onClick={() => handleRegion('Oceania')}
+      >
         <h2>oceania</h2>
         <img src={oceania} alt="oceania" />
-      </div>
+      </button>
       {
         countriesRegion.length > 0
         && (

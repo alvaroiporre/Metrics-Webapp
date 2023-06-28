@@ -62,7 +62,7 @@ const Map = () => {
         context.stroke();
       });
     }
-  }, [index]);
+  }, [index, dimensions]);
 
   return (
     <>
