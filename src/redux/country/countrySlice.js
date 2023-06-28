@@ -50,7 +50,7 @@ const countrySlice = createSlice({
 
         state.countriesIndexes = newIndex;
         state.countries = action.payload.map((country) => ({
-          name: country.name.official,
+          name: country.name.common,
           id: country.cca2,
           currency: country.currencies,
           capital: country.capital,

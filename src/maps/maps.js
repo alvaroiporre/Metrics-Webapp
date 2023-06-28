@@ -1,12 +1,12 @@
-const formData = (data, limits) => {
+const formData = (data, limits, dimensions) => {
   const width = limits.maxX - limits.minX;
   const height = limits.maxY - limits.minY;
-  const scale = Math.min(400 / width, 400 / height);
+  const scale = Math.min(dimensions.width / width, dimensions.height / height);
   const r = [];
   data.forEach((element) => {
     r.push({
       x: (element[0] - limits.minX) * scale,
-      y: 400 - ((element[1] - limits.minY) * scale),
+      y: dimensions.height - ((element[1] - limits.minY) * scale),
     });
   });
   return r;

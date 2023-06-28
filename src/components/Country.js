@@ -3,16 +3,16 @@ import { useSelector } from 'react-redux';
 import shapes from '../assets/country_shapes.json';
 import { getLimits, formData } from '../maps/maps';
 
-const Map = () => {
-  const selectedCountry = useSelector((state) => state.countries.selectedCountry);
+const Country = ({ id }) => {
   const indexCountrySelected = useSelector((store) => store.countries.countriesIndexes);
-  const index = 0 || indexCountrySelected[selectedCountry];
+  const index = 0 || indexCountrySelected[id];
 
   const reference = useRef();
-  const [dimensions, setDimensions] = useState({ width: 400, height: 400 });
+
+  const [dimensions, setDimensions] = useState({ width: 100, height: 100 });
 
   const canvasRef = useRef(null);
-  const countryName = shapes[index].cntry_name;
+  const countryName = id;
 
   useEffect(() => {
     if (reference.current) {
@@ -21,12 +21,14 @@ const Map = () => {
         height: reference.current.offsetHeight,
       });
     }
-
     const canvas = canvasRef.current;
     const context = canvas.getContext('2d');
-    context.clearRect(0, 0, dimensions.width, dimensions.height);
+    context.clearRect(0, 0, dimensions.height, dimensions.width);
 
-    const data = shapes[index].geo_shape.geometry.coordinates;
+    let data = shapes[index]?.geo_shape?.geometry?.coordinates;
+    if (data === undefined) {
+      data = [[[1, 0], [1, 1], [0, 0], [0, 1]]];
+    }
     const limits = getLimits(data);
     if (data.length === 1) {
       const polygon = formData(data[0], limits, dimensions);
@@ -66,10 +68,9 @@ const Map = () => {
 
   return (
     <>
-      <h2>{countryName}</h2>
-      <canvas ref={canvasRef} width={dimensions.width} height={dimensions.height} />
+      <canvas ref={canvasRef} width={100} height={100} />
     </>
   );
 };
 
-export default Map;
+export default Country;
