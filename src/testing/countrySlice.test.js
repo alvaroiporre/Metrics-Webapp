@@ -1,6 +1,8 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import countryReducer, { fetchCountries, selectCountry, getCountriesIndexes, getCountriesRegion } from '../redux/country/countrySlice';
+import countryReducer, {
+  fetchCountries, getCountriesRegion,
+} from '../redux/country/countrySlice';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);

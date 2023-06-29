@@ -1,7 +1,7 @@
-import { render, screen, act } from "@testing-library/react";
-import Home from "../components/Home";
-import { Provider } from "react-redux";
-import store from "../redux/store";
+import { render, screen, act } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import Home from '../components/Home';
+import store from '../redux/store';
 import '@testing-library/jest-dom/extend-expect';
 
 describe('Testing the Home component', () => {
