@@ -53,7 +53,8 @@ Welcome to my Countries of the World
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[Live](https://radiant-salmiakki-873b0d.netlify.app).
+- Here is the [Live Demo](https://radiant-salmiakki-873b0d.netlify.app) link.
+- Here is the [Video](https://www.loom.com/share/b8b5f233eed444a088ae81bac2ee4586?sid=e307779b-95ba-47ec-9060-9f3f9e6d5bdf) explaining the project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
