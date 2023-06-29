@@ -53,6 +53,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 5px;
+  text-decoration: none;
 }
 
 .country-card-name {

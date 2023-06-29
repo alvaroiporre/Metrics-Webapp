@@ -29,8 +29,9 @@ const Home = () => {
       dispatch(fetchCountries());
     }
     if (countriesRegion.length === 0) {
-      handleRegion('Americas');
+      dispatch(getCountriesRegion('Americas'));
     }
+    // eslint-disable-next-line
   }, [status]);
 
   return (
