@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.735319f6.css",
+    "main.js": "/static/js/main.b1d1edcd.js",
+    "static/media/asia.svg": "/static/media/asia.d7ab998195408ca8510210764b8cb3e4.svg",
+    "static/media/europe.svg": "/static/media/europe.92850e7f9cafd28ae7d720d1c79cac61.svg",
+    "static/media/africa.svg": "/static/media/africa.c4527cbc02e432fad833c0dccf450ab8.svg",
+    "static/media/oceania.svg": "/static/media/oceania.47efbb81399ec13ad562173ee2c1f6b4.svg",
+    "static/media/americas.svg": "/static/media/americas.ea343fa4a1bfeb4d8e7a965504a385e0.svg",
+    "index.html": "/index.html",
+    "main.735319f6.css.map": "/static/css/main.735319f6.css.map",
+    "main.b1d1edcd.js.map": "/static/js/main.b1d1edcd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.735319f6.css",
+    "static/js/main.b1d1edcd.js"
+  ]
+}
