@@ -125,6 +125,8 @@ I would like to thank all my colleagues who are always willing to contribute.
 
 I would like to thank [rcaferati](https://github.com/rcaferati/react-awesome-slider), because I am using his slider in react.
 
+I would like to thank [Nelson Sakwa](https://www.behance.net/sakwadesignstudio), because of his beautiful design.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FAQ (optional) -->
